@@ -8,7 +8,9 @@
     "build-docs": "documentation build src/index.js --config documentation.yml -f html -o docs",
     "lint": "node_modules/eslint/bin/eslint.js src",
     "fix-lint": "node_modules/eslint/bin/eslint.js --fix src",
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -63,6 +65,8 @@
   },
   "dependencies": {
     "@code.gov/cautious": "0.3.0",
-    "axios": "^0.18.0"
-  }
+    "axios": "^0.18.0",
+    "snyk": "^1.161.1"
+  },
+  "snyk": true
 }
